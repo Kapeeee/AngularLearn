@@ -1,36 +1,21 @@
-(function(){
+(() =>{
 
-//     const miFuncion = function ( a:string){
-//         return a.toUpperCase();
-//     }
-
-//     const miFuncionF = (a:string) => a.toUpperCase();
-    
-
-// console.log(miFuncion('normal'));
-// console.log(miFuncionF('flecha'));
-
-// const sumarN = function ( a:number,b:number){
-//     return a+b;
-// }
-
-// const sumarF = (a:number,b:number) => a+b;
-
-// console.log(sumarN(1,2));
-// console.log(sumarF(4,2));
+     const retirarDinero = (montoRetirar:number) =>{
+            
+        let dineroAcutal = 1000;
+        console.log('Hola Mundo');
+        return new Promise((resolve,reject)=>{
+            if(montoRetirar > dineroAcutal){
+                reject('No hay suficientes fondos');
+            } else{
+                dineroAcutal -= montoRetirar; 
+                resolve(dineroAcutal);
+            }
+        });
+     }
 
 
-const hulk = {
-    nombre: 'hulk',
-    smash(){
-
-        setTimeout( function(){
-            console.log(`${this.nombre} SmasH!!!`);
-        },1000);
-        
-    }
-}
-
-hulk.smash();
-
+    retirarDinero(1500)
+        .then (montoActual => console.log(`Me queda ${montoActual}`))
+        .catch(error => console.warn(error));
 })();
