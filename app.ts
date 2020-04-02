@@ -1,21 +1,17 @@
-(() =>{
+(()=>{
 
-     const retirarDinero = (montoRetirar:number) =>{
-            
-        let dineroAcutal = 1000;
-        console.log('Hola Mundo');
-        return new Promise((resolve,reject)=>{
-            if(montoRetirar > dineroAcutal){
-                reject('No hay suficientes fondos');
-            } else{
-                dineroAcutal -= montoRetirar; 
-                resolve(dineroAcutal);
-            }
-        });
-     }
+        const sumar = (a:number,b:number,c:number):number =>a+b;
+        
+        const nombre = ():string => 'Hola Patrik';
 
+        const obtenerSalario = ():Promise<string> =>{
 
-    retirarDinero(1500)
-        .then (montoActual => console.log(`Me queda ${montoActual}`))
-        .catch(error => console.warn(error));
+            return new Promise((resolve,reject)=>{
+                resolve('Patrik');
+            })
+
+        }
+
+        obtenerSalario().then( a=> console.log(a.toUpperCase))
+
 })();
